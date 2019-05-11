@@ -58,11 +58,11 @@
     return YES;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.bottonTextField resignFirstResponder];
-    [self.billAmountTextField resignFirstResponder];
-    [self.tipPercentageTextField resignFirstResponder];
-}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    [self.bottonTextField resignFirstResponder];
+//    [self.billAmountTextField resignFirstResponder];
+//    [self.tipPercentageTextField resignFirstResponder];
+//}
 - (IBAction)calculateTipButtonTapped:(UIButton *)sender {
     NSUInteger billAmount = [_billAmountTextField.text floatValue] * 100;
     NSUInteger tipPercentage = [_tipPercentageTextField.text intValue];
