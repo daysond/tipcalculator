@@ -36,7 +36,7 @@
     self.notificationCenter = [NSNotificationCenter defaultCenter];
     
     [self.notificationCenter addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [self.notificationCenter addObserver:self.bottonTextField selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [self.notificationCenter addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
@@ -58,11 +58,11 @@
     return YES;
 }
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    [self.bottonTextField resignFirstResponder];
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 //    [self.billAmountTextField resignFirstResponder];
-//    [self.tipPercentageTextField resignFirstResponder];
-//}
+    [self.view endEditing:YES];
+}
+
 - (IBAction)calculateTipButtonTapped:(UIButton *)sender {
     NSUInteger billAmount = [_billAmountTextField.text floatValue] * 100;
     NSUInteger tipPercentage = [_tipPercentageTextField.text intValue];
